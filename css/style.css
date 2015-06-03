@@ -279,7 +279,7 @@ p {
 
 
 /* Twitter */
-.pages .une-phrase {
+.pages > p, .pages > div {
 	padding-bottom: 30px;
 }
 
@@ -287,7 +287,7 @@ p {
 	display: none;
 	position: absolute;
 	bottom: 55px;
-	right: 35px;
+	right: 15px;
 	font-size: 2em;
 }
 
