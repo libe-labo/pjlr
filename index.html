@@ -47,13 +47,13 @@
           <div class="pagewrapper" ng-class="categoryClass()">
             <div id="menu">
                 <ul>
-                <li class="une-phrase"><div><p><a ng-click="setCategory('une-phrase')" href="" rel="une-phrase">En une phrase</a></p></div></li>
-                <li class="en-details"><div><p><a ng-click="setCategory('en-details')" href="" rel="en-details">En détails</a></p></div></li>
-                <li class="quel-probleme"><div><p><a ng-click="setCategory('quel-probleme')" href="" rel="quel-probleme">Quel est le problème ?</a></p></div></li>
-                <li class="dans-la-vraie-vie"><div><p><a ng-click="setCategory('dans-la-vraie-vie')" href="" rel="dans-la-vraie-vie">Dans la vie courante</a></p></div></li>
-                <li class="avec-des-poissons"><div><p><a ng-click="setCategory('avec-des-poissons')" href="" rel="avec-des-poissons">Pisciculture</a></p></div></li>
-                <li class="savoir-plus"><div><p><a ng-click="setCategory('savoir-plus')" href="" rel="savoir-plus">En savoir plus</a></p></div></li>
-              </ul>
+                    <li ng-class="menuClass('une-phrase')" class="une-phrase"><div><p><a ng-click="setCategory('une-phrase')" href="" rel="une-phrase">En une phrase</a></p></div></li>
+                    <li ng-class="menuClass('en-details')" class="en-details"><div><p><a ng-click="setCategory('en-details')" href="" rel="en-details">En détails</a></p></div></li>
+                    <li ng-class="menuClass('quel-probleme')" class="quel-probleme"><div><p><a ng-click="setCategory('quel-probleme')" href="" rel="quel-probleme">Quel est le problème ?</a></p></div></li>
+                    <li ng-class="menuClass('dans-la-vraie-vie')" class="dans-la-vraie-vie"><div><p><a ng-click="setCategory('dans-la-vraie-vie')" href="" rel="dans-la-vraie-vie">Dans la vie courante</a></p></div></li>
+                    <li ng-class="menuClass('avec-des-poissons')" class="avec-des-poissons"><div><p><a ng-click="setCategory('avec-des-poissons')" href="" rel="avec-des-poissons">Pisciculture</a></p></div></li>
+                    <li ng-class="menuClass('savoir-plus')" class="savoir-plus"><div><p><a ng-click="setCategory('savoir-plus')" href="" rel="savoir-plus">En savoir plus</a></p></div></li>
+                </ul>
             </div>
 
             <div class='isotope' ng-class="columnsClass()">

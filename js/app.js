@@ -134,6 +134,12 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
         return classes;
     };
 
+    $scope.menuClass = function(category) {
+        return {
+            selected : $scope.category === category
+        };
+    };
+
     $scope.columnsClass = function() {
         return {
             twocols : ['en-details', 'quel-probleme'].indexOf($scope.category) >= 0
