@@ -57,7 +57,7 @@
             </div>
 
             <div class='isotope' ng-class="columnsClass()">
-                <div class="pages" ng-repeat="page in pages" ng-class="pageClass(page.slug)" id="{{ page.slug }}">
+                <div class="pages" ng-repeat="page in pages" ng-class="pageClass(page.slug)" id="{{ page.slug }}" ng-mouseenter="isOver(page.slug)" ng-mouseleave="isOver(null)">
                     <h3><a ng-click="fadeAllBut(page.slug)" ng-href="{{ getPageLink(page.slug) }}"><span>{{ page.title }}</span></a></h3>
                     <p class="une-phrase" ng-show="isCategory('une-phrase')" ng-bind-html="page['une-phrase']"></p>
                     <p class="en-details" ng-show="isCategory('en-details')" ng-bind-html="page['en-details']"></p>
@@ -71,6 +71,7 @@
                             <p>{{ page['savoir-plus'].text }}</p>
                         </a>
                     </div>
+                    <a href="#" class="twitter-share-button" ng-class="twitterClass(page.slug)" ng-click="tweet(page)"><i class="fa fa-twitter"></i></a>
                 </div>
             </div>
         </section>

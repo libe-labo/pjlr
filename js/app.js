@@ -42,6 +42,7 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
     ** Category
     */
     var notFadedOut = null;
+    var mouseIsOver = null;
     $scope.category = 'une-phrase';
 
     $scope.isCategory = function(toTest) {
@@ -145,8 +146,25 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
         };
     };
 
+    $scope.twitterClass = function(slug) {
+        return {
+            display : mouseIsOver === slug
+        };
+    };
+
     $scope.getPageLink = function(slug) {
         return '#/' + $scope.category + '--' + slug;
+    };
+
+    $scope.isOver = function(slug) {
+        mouseIsOver = slug;
+    };
+
+    $scope.tweet = function(item) {
+        var text = encodeURIComponent(item.title + ' : j\'ai tout compris à la Loi Renseignement grâce à @libe. Et vous ? #pjlr');
+        var url = encodeURIComponent($location.absUrl() + '#' + $scope.category + '--' + item.slug);
+        var link = 'https://twitter.com/intent/tweet?original_referer=' + '' + '&text=' + text + '&url=' + url;
+        window.open(link);
     };
 
     /*

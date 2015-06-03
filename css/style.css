@@ -288,11 +288,15 @@ p {
 	position: absolute;
 	bottom: 55px;
 	right: 35px;
-	font-size: .8em;
+	font-size: 2em;
 }
 
 .twitter-share-button:hover {
 	color: #000;
+}
+
+.twitter-share-button.display {
+	display: block;
 }
 
 @media (max-width: 992px) {
