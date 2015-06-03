@@ -7,15 +7,16 @@ app.filter('slugify', function() {
         return str.toLowerCase()
                   .replace('/\s+/g', '-')
                   .replace(/[^\w\-]+/g, '')
-                  .replace(/\-\-+/g, '-')
-                  .replace(/^-+/, '')
-                  .replace(/-+$/, '');
+                  .replace(/\-\-+/g, '-');
     };
 });
 
 app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$filter',
                         function($scope, $http, $timeout, $sce, $location, $filter) {
 
+    /*
+    ** Isotope
+    */
     var callIsotope = function() {
         $timeout(function() {
             $('.isotope').isotope({
@@ -56,6 +57,9 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
         $location.path('/' + category);
     };
 
+    /*
+    ** Fade out
+    */
     $scope.fadeAllBut = function(slug) {
         if (slug != null && notFadedOut !== slug) {
             notFadedOut = slug;
@@ -87,14 +91,13 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
     $http.get('data/texts.tsv').then(function(response) {
         allData = d3.tsv.parse(response.data, function(d) {
             return {
-                title : d['Mot-clé'],
-                slug : $filter('slugify')(d['Mot-clé']),
+                'title' : d['Mot-clé'],
+                'slug' : $filter('slugify')(d['Mot-clé']),
                 'une-phrase' : $sce.trustAsHtml(d['tl;dr']),
                 'en-details' : $sce.trustAsHtml(d.Explication),
                 'quel-probleme' : $sce.trustAsHtml(d['Quels problèmes ça pose?']),
                 'dans-la-vraie-vie' : $sce.trustAsHtml(d['Vie réelle']),
-                'avec-des-poissons' : $sce.trustAsHtml(d['Pêche']),
-                'savoir-plus' : $sce.trustAsHtml(d['Liens pour en savoir plus'])
+                'avec-des-poissons' : $sce.trustAsHtml(d['Pêche'])
             };
         });
 
@@ -122,7 +125,7 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
     });
 
     /*
-    ** Classes utils
+    ** Utils
     */
     $scope.categoryClass = function() {
         var classes = {};
@@ -142,8 +145,27 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
         };
     };
 
-
     $scope.getPageLink = function(slug) {
         return '#/' + $scope.category + '--' + slug;
     };
+
+    /*
+    ** Resize handler
+    */
+    var menu = $('#menu');
+    var basePos = menu.position().top + parseInt(menu.css('margin-top'));
+    $(document).on('scroll', _.debounce(function() {
+        if (window.innerWidth <= 992) {
+            if (window.scrollY >= basePos) {
+                menu.css({
+                    position : 'fixed',
+                    top : 30,
+                });
+            } else {
+                menu.css({
+                    position : 'relative'
+                });
+            }
+        }
+    }));
 }]);
