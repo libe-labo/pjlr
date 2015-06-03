@@ -14,6 +14,11 @@ app.filter('slugify', function() {
 app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$filter',
                         function($scope, $http, $timeout, $sce, $location, $filter) {
 
+    var allData = [];
+    var notFadedOut = null;
+    var mouseIsOver = null;
+    $scope.category = 'une-phrase';
+
     /*
     ** Isotope
     */
@@ -36,15 +41,9 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
         }
     };
 
-    var allData = [];
-
     /*
     ** Category
     */
-    var notFadedOut = null;
-    var mouseIsOver = null;
-    $scope.category = 'une-phrase';
-
     $scope.isCategory = function(toTest) {
         return $scope.category === toTest;
     };
@@ -131,7 +130,7 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
     ** Utils
     */
     $scope.categoryClass = function() {
-        var classes = {};
+        var classes = { };
         classes['wrapper-' + $scope.category] = true;
         return classes;
     };

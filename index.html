@@ -42,49 +42,50 @@
 
                 <div class="header">
                     <h1>Renseignement : exercices de styles pour comprendre la loi</h1>
-                    <h2>Le projet de loi a été adopté ce mardi à l'Assemblée Nationale. Si vous n'avez rien compris, <em>Libération</em> vous explique ce que signifient les termes du débat.</h2>
+                    <h2>Le projet de loi est étudié en juin par le Sénat. Si vous n'avez rien compris, <em>Libération</em> vous explique ce que signifient les termes du débat.</h2>
                 </div>
 
                 <div class="pagewrapper" ng-class="categoryClass()">
                     <div id="menu">
-                    <ul>
-                        <li ng-class="menuClass('une-phrase')" class="une-phrase">
-                            <div><p><a ng-click="setCategory('une-phrase')" href="" rel="une-phrase">En une phrase</a></p></div>
-                        </li>
-                        <li ng-class="menuClass('en-details')" class="en-details">
-                            <div><p><a ng-click="setCategory('en-details')" href="" rel="en-details">En détails</a></p></div>
-                        </li>
-                        <li ng-class="menuClass('quel-probleme')" class="quel-probleme">
-                            <div><p><a ng-click="setCategory('quel-probleme')" href="" rel="quel-probleme">Quel est le problème ?</a></p></div>
-                        </li>
-                        <li ng-class="menuClass('dans-la-vraie-vie')" class="dans-la-vraie-vie">
-                            <div><p><a ng-click="setCategory('dans-la-vraie-vie')" href="" rel="dans-la-vraie-vie">Dans la vie courante</a></p></div>
-                        </li>
-                        <li ng-class="menuClass('avec-des-poissons')" class="avec-des-poissons">
-                            <div><p><a ng-click="setCategory('avec-des-poissons')" href="" rel="avec-des-poissons">Pisciculture</a></p></div>
-                        </li>
-                        <li ng-class="menuClass('savoir-plus')" class="savoir-plus">
-                            <div><p><a ng-click="setCategory('savoir-plus')" href="" rel="savoir-plus">En savoir plus</a></p></div>
-                        </li>
-                    </ul>
-                </div>
+                        <ul>
+                            <li ng-class="menuClass('une-phrase')" class="une-phrase">
+                                <div><p><a ng-click="setCategory('une-phrase')" href="" rel="une-phrase">En une phrase</a></p></div>
+                            </li>
+                            <li ng-class="menuClass('en-details')" class="en-details">
+                                <div><p><a ng-click="setCategory('en-details')" href="" rel="en-details">En détails</a></p></div>
+                            </li>
+                            <li ng-class="menuClass('quel-probleme')" class="quel-probleme">
+                                <div><p><a ng-click="setCategory('quel-probleme')" href="" rel="quel-probleme">Quel est le problème ?</a></p></div>
+                            </li>
+                            <li ng-class="menuClass('dans-la-vraie-vie')" class="dans-la-vraie-vie">
+                                <div><p><a ng-click="setCategory('dans-la-vraie-vie')" href="" rel="dans-la-vraie-vie">Dans la vie courante</a></p></div>
+                            </li>
+                            <li ng-class="menuClass('avec-des-poissons')" class="avec-des-poissons">
+                                <div><p><a ng-click="setCategory('avec-des-poissons')" href="" rel="avec-des-poissons">Pisciculture</a></p></div>
+                            </li>
+                            <li ng-class="menuClass('savoir-plus')" class="savoir-plus">
+                                <div><p><a ng-click="setCategory('savoir-plus')" href="" rel="savoir-plus">En savoir plus</a></p></div>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class='isotope' ng-class="columnsClass()">
-                    <div class="pages" ng-repeat="page in pages" ng-class="pageClass(page.slug)" id="{{ page.slug }}" ng-mouseenter="isOver(page.slug)" ng-mouseleave="isOver(null)">
-                        <h3><a ng-click="fadeAllBut(page.slug)" ng-href="{{ getPageLink(page.slug) }}"><span>{{ page.title }}</span></a></h3>
-                        <p class="une-phrase" ng-show="isCategory('une-phrase')" ng-bind-html="page['une-phrase']"></p>
-                        <p class="en-details" ng-show="isCategory('en-details')" ng-bind-html="page['en-details']"></p>
-                        <p class="quel-probleme" ng-show="isCategory('quel-probleme')" ng-bind-html="page['quel-probleme']"></p>
-                        <p class="dans-la-vraie-vie" ng-show="isCategory('dans-la-vraie-vie')" ng-bind-html="page['dans-la-vraie-vie']"></p>
-                        <p class="avec-des-poissons" ng-show="isCategory('avec-des-poissons')" ng-bind-html="page['avec-des-poissons']"></p>
-                        <div class="savoir-plus" ng-show="isCategory('savoir-plus')">
-                            <a target="_blank" href="{{ page['savoir-plus'].link }}">
-                                <img ng-style="page['savoir-plus'].pictureStyle" ng-src="{{ page['savoir-plus'].picture }}" />
-                                <h4>{{ page['savoir-plus'].title }}</h4>
-                                <p>{{ page['savoir-plus'].text }}</p>
-                            </a>
+                    <div class='isotope' ng-class="columnsClass()">
+                        <div class="pages" ng-repeat="page in pages" ng-class="pageClass(page.slug)" id="{{ page.slug }}" ng-mouseenter="isOver(page.slug)" ng-mouseleave="isOver(null)">
+                            <h3><a ng-click="fadeAllBut(page.slug)" ng-href="{{ getPageLink(page.slug) }}"><span>{{ page.title }}</span></a></h3>
+                            <p class="une-phrase" ng-show="isCategory('une-phrase')" ng-bind-html="page['une-phrase']"></p>
+                            <p class="en-details" ng-show="isCategory('en-details')" ng-bind-html="page['en-details']"></p>
+                            <p class="quel-probleme" ng-show="isCategory('quel-probleme')" ng-bind-html="page['quel-probleme']"></p>
+                            <p class="dans-la-vraie-vie" ng-show="isCategory('dans-la-vraie-vie')" ng-bind-html="page['dans-la-vraie-vie']"></p>
+                            <p class="avec-des-poissons" ng-show="isCategory('avec-des-poissons')" ng-bind-html="page['avec-des-poissons']"></p>
+                            <div class="savoir-plus" ng-show="isCategory('savoir-plus')">
+                                <a target="_blank" href="{{ page['savoir-plus'].link }}">
+                                    <img ng-style="page['savoir-plus'].pictureStyle" ng-src="{{ page['savoir-plus'].picture }}" />
+                                    <h4>{{ page['savoir-plus'].title }}</h4>
+                                    <p>{{ page['savoir-plus'].text }}</p>
+                                </a>
+                            </div>
+                            <a href="" class="twitter-share-button" ng-class="twitterClass(page.slug)" ng-click="tweet(page)"><i class="fa fa-twitter"></i></a>
                         </div>
-                        <a href="" class="twitter-share-button" ng-class="twitterClass(page.slug)" ng-click="tweet(page)"><i class="fa fa-twitter"></i></a>
                     </div>
                 </div>
             </section>
