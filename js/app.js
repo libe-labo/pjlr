@@ -169,9 +169,11 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
     };
 
     $scope.tweet = function(item) {
+        $scope.fadeAllBut(item.slug);
+
         var text = encodeURIComponent(item.title + ' : j\'ai tout compris à la Loi Renseignement grâce à @libe. Et vous ? #pjlr'),
-            url  = encodeURIComponent($location.absUrl() + '#' + $scope.category + '--' + item.slug),
-            link = 'https://twitter.com/intent/tweet?original_referer=' + '' + '&text=' + text + '&url=' + url;
+            url  = encodeURIComponent($location.absUrl()),
+            link = 'https://twitter.com/intent/tweet?original_referer=' + '' + '&text=' + text + ' ' + url;
 
         window.open(link, '', 'width=575,height=400,menubar=no,toolbar=no');
     };
