@@ -1,0 +1,385 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=3af16084-ba56-49ca-b37d-0b49b59e1927");html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}@font-face{font-family:"AleoRegular";src:url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Regular-webfont.eot);src:url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Regular-webfont.eot?#iefix) format('embedded-opentype'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Regular-webfont.woff) format('woff'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Regular-webfont.ttf) format('truetype'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Regular-webfont.svg) format('svg')}@font-face{font-family:"AleoBold";src:url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Bold-webfont.eot);src:url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Bold-webfont.eot?#iefix) format('embedded-opentype'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Bold-webfont.woff) format('woff'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Bold-webfont.ttf) format('truetype'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/Aleo-Bold-webfont.svg) format('svg')}@font-face{font-family:"ProximaNovaBold";src:url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot);src:url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix) format('embedded-opentype'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff) format('woff'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf) format('truetype'),url(//cartodb-assets.global.ssl.fastly.net/odyssey.js/8152bc4e-d700-4c78-b6be-326893e6f53f.svg) format('svg')}body{counter-reset: chapter;min-height:100%;background:#fff}html{min-height:100%}.progress-bar{position:fixed;left:0;top:0;height:3px;display:inline-block;background:#ff7373;width:20%;z-index:2}
+@font-face{font-family:"Proxima Nova Regular";font-weight:normal;font-style:normal;src:url('http://s1.libe.com/font/license/27522D_B_0.eot?6f3b7a3a38b9') format("eot");src:url('http://s1.libe.com/font/license/27522D_B_0.eot?#iefix') format("embedded-opentype"),url('http://s1.libe.com/font/license/27522D_B_0.woff?973092db2463') format("woff"),url('http://s1.libe.com/font/license/27522D_B_0.ttf?326b4ed42028') format("truetype"),url('http://s1.libe.com/font/license/27522D_B_0.svg#Proxima Nova Regular') format("svg")}@font-face{font-family:"Proxima Nova Regular Bold";font-weight:normal;font-style:normal;src:url('http://s1.libe.com/font/license/27522D_C_0.eot?7651b0835130') format("eot");src:url('http://s1.libe.com/font/license/27522D_C_0.eot?#iefix') format("embedded-opentype"),url('http://s1.libe.com/font/license/27522D_C_0.woff?1d97b03ffbee') format("woff"),url('http://s1.libe.com/font/license/27522D_C_0.ttf?c4b6119d8273') format("truetype"),url('http://s1.libe.com/font/license/27522D_C_0.svg#Proxima Nova Regular Bold') format("svg")}@font-face{font-family:"Trade Gothic Bold Cond";font-weight:normal;font-style:normal;src:url('http://s1.libe.com/font/license/tradegothicltstd-bdcn20.eot?1669fae0818a') format("eot");src:url('http://s1.libe.com/font/license/tradegothicltstd-bdcn20.eot?#iefix') format("embedded-opentype"),url('http://s1.libe.com/font/license/tradegothicltstd-bdcn20.woff?7f6be2b8eca9') format("woff"),url('http://s1.libe.com/font/license/tradegothicltstd-bdcn20.ttf?5dda5c1e2946') format("truetype"),url('http://s1.libe.com/font/license/tradegothicltstd-bdcn20.svg#Trade Gothic Bold Cond') format("svg")}
+
+.header {
+	width: 100%;
+	background-image: url(cover.jpg);
+	background-size: 100% auto;
+	margin-top: 0;
+	padding-bottom: 5%;
+	padding-top: 20px;
+	text-shadow: -1px -1px 10px rgba(150, 150, 150, 1);
+}
+
+h1 {
+	font-family: "Trade Gothic Bold Cond";
+	font-size: 5em;
+	letter-spacing: -2px;
+	text-align: center;
+	text-align: center;
+	position: relative;
+	color: #fff;
+	margin: 20px auto 20px auto;
+	text-shadow: -1px -1px 10px rgba(150, 150, 150, 1);
+	line-height: 1em;
+}
+
+h2 {
+    width: 40%;
+    font-family: "Georgia",sans-serif;
+    text-align: center;
+    margin: 20px auto;
+    color: #FFF;
+    font-size: 1.3em;
+}
+
+.pages h3 {
+	font-family: "Trade Gothic Bold Cond";
+	font-size: 2.5em;
+	letter-spacing: -1px;
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	line-height: 1em;
+}
+
+.pages h3 a {
+	text-decoration: none;
+}
+
+p {
+	width: 580px;
+	font-family: Georgia;
+	padding-bottom: 10px;
+	line-height: 1.3em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#commen {
+	color: #FFF;
+	text-decoration: none;
+	position: relative;
+	top: 30%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 101px;
+	padding: 15px 20px 15px;
+	border: 3px solid #FFF;
+	font-family: "Proxima Nova Regular";
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#menu {
+	margin: -30px auto 3px auto;
+    background: #fff;
+    z-index: 200;
+    width: 85%;
+}
+
+#menu ul {
+	display: inline-block;
+	position: relative;
+	height: 60px;
+	font-size: 1em;
+	top: 0;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+		    transform: translate(-50%, 0);
+}
+
+#menu li {
+	display: inline-block;
+	float: left;
+	padding: 0 20px;
+	text-transform: uppercase;
+	height: 100%;
+	-moz-box-sizing: border-box;
+         box-sizing: border-box;
+    text-align: center;
+    width: 16.666%;
+}
+
+#menu li > div {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+#menu li p {
+	font-family: "Proxima Nova Regular";
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0;
+}
+
+#menu li a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.isotope {
+	width: 85%;
+	margin: 50px auto 0 auto;
+	z-index: 100;
+}
+
+.pages {
+	width: 33%;
+	float: left;
+	display: block;
+	padding: 8px 16px;
+	-moz-box-sizing: border-box;
+         box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.pages.large {
+	width: 66%;
+}
+
+.pages .savoir-plus img {
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+
+.pages .savoir-plus h4 {
+	font-family: "Trade Gothic Bold Cond";
+	padding: 10px 0;
+	font-size: 2.2em;
+	color: #000;
+	letter-spacing: -1px;
+	line-height: 1em;
+}
+
+.pages .savoir-plus a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.pages .savoir-plus p {
+	font-family: "Georgia", sans-serif;
+	font-size: 1.3em;
+    letter-spacing: -0.5px;
+    line-height: 1.6rem;
+}
+
+.isotope.twocols .pages {
+	width: 50%;
+}
+
+.pages p {
+	font-family: "Montserrat",sans-serif;
+	font-size: 2em;
+	width: 100%;
+	letter-spacing: -3px;
+	line-height: 2.5rem;
+}
+
+.pages p a {
+	color: #C42121;
+}
+
+/* Colors */
+.pagewrapper .pages span, .pagewrapper .pages strong, .pagewrapper #menu li, .pagewrapper .twitter-share-button {
+	color: #4BC0A1;
+	transition: color .3s;
+}
+.pagewrapper #menu ul {
+	border: 5px solid #4BC0A1;
+	transition: border-color .3s;
+}
+.pagewrapper #menu li.selected {
+	color: #fff;
+	background: #4BC0A1;
+	transition: color .3s, backgruond-color .3s;
+}
+
+.wrapper-une-phrase .pages span, .wrapper-une-phrase #menu li, .wrapper-une-phrase .twitter-share-button {
+	color: #4BC0A1;
+}
+.wrapper-une-phrase #menu ul {	
+	border: 5px solid #4BC0A1;
+}
+.wrapper-une-phrase #menu li.selected {
+	color: #fff;
+	background: #4BC0A1;
+}
+
+.wrapper-en-details .pages span, .wrapper-en-details #menu li, .wrapper-en-details .twitter-share-button {
+	color: #EFC94C;
+}
+.wrapper-en-details #menu ul {	
+	border: 5px solid #EFC94C;
+}
+.wrapper-en-details #menu li.selected {
+	color: #fff;
+	background: #EFC94C;
+}
+
+.wrapper-quel-probleme .pages span, .wrapper-quel-probleme #menu li, .wrapper-quel-probleme .twitter-share-button {
+	color: #334D5C;
+}
+.wrapper-quel-probleme #menu ul {	
+	border: 5px solid #334D5C;
+}
+.wrapper-quel-probleme #menu li.selected {
+	color: #fff;
+	background: #334D5C;
+}
+
+.wrapper-dans-la-vraie-vie .pages span, .wrapper-dans-la-vraie-vie #menu li, .wrapper-dans-la-vraie-vie .twitter-share-button {
+	color: #E27A3F;
+}
+.wrapper-dans-la-vraie-vie #menu ul {	
+	border: 5px solid #E27A3F;
+}
+.wrapper-dans-la-vraie-vie #menu li.selected {
+	color: #fff;
+	background: #E27A3F;
+}
+
+.wrapper-avec-des-poissons .pages span, .wrapper-avec-des-poissons #menu li, .wrapper-avec-des-poissons .twitter-share-button {
+	color: #DF4949;
+}
+.wrapper-avec-des-poissons #menu ul {	
+	border: 5px solid #DF4949;
+}
+.wrapper-avec-des-poissons #menu li.selected {
+	color: #fff;
+	background: #DF4949;
+}
+
+.wrapper-savoir-plus .pages span, .wrapper-savoir-plus #menu li, .wrapper-savoir-plus .twitter-share-button {
+	color: #B9CCB8;
+}
+.wrapper-savoir-plus #menu ul {	
+	border: 5px solid #B9CCB8;
+}
+.wrapper-savoir-plus #menu li.selected {
+	color: #fff;
+	background: #B9CCB8;
+}
+
+/* Typo sizes */
+
+.wrapper-en-details .pages p, .wrapper-quel-probleme .pages p, .wrapper-dans-la-vraie-vie .pages p {
+	font-size: 1.3em;
+    letter-spacing: -0.5px;
+    line-height: 2.1rem;
+}
+
+
+/* Twitter */
+.pages .une-phrase {
+	padding-bottom: 30px;
+}
+
+.twitter-share-button {
+	display: none;
+	position: absolute;
+	bottom: 55px;
+	right: 35px;
+	font-size: .8em;
+}
+
+.twitter-share-button:hover {
+	color: #000;
+}
+
+@media (max-width: 992px) {
+	.header {
+		background-size: auto 100%;
+	}
+
+	h2 {
+		width: 90%;
+	}
+
+	#main-header {
+		position: relative;
+	}
+
+	section#main-content {
+		padding-top: 0;
+	}
+
+	.pages {
+		width: 50%;
+	}
+
+	.pages p {
+		font-size: 1.5em;
+		letter-spacing: -1px;
+		line-height: 2rem;
+	}
+
+	.twocols .pages p {
+		line-height:  1.7rem;
+	}
+
+	#menu {
+		width: 100%;
+	}
+
+	#menu ul {
+		font-size: .9em;
+		width: 100%;
+		margin-top: 0;
+	}
+
+	.isotope {
+		margin-top: 100px;
+	}
+}
+
+@media (max-width: 768px) {
+	h1 {
+		font-size: 3em;
+		padding: 0 10px;
+	}
+
+	h2 {
+		margin-bottom: 50px;
+	}
+
+	.pages, .isotope.twocols .pages {
+		width: 100%;
+	}
+
+	#menu ul {
+		font-size: .6em;
+	}
+
+	.pages p {
+
+	}
+}
+
+@media (min-width: 992px) {
+	#menu {
+		position: relative !important;
+	}
+}
+
+/* Utils */
+
+.hidden {
+	display: none;
+}
+
+em {
+	font-style: italic;
+}
+
+.fadedout {
+	opacity: .2;
+}
