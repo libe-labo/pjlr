@@ -75,14 +75,16 @@ app.controller('Ctrl', ['$scope', '$http', '$timeout', '$sce', '$location', '$fi
     var path = $location.path();
     if (path.length > 0) {
         path = path.substr(1).split('--');
-        $scope.category = path[0];
+        if (path[0] != null && path[0].length > 0) {
+            $scope.category = path[0];
 
-        if (path.length > 1) {
-            $scope.fadeAllBut(path[1]);
+            if (path.length > 1) {
+                $scope.fadeAllBut(path[1]);
 
-            $timeout(function() {
-                $(window).scrollTop($('#' + path[1]).offset().top - 50);
-            }, 500);
+                $timeout(function() {
+                    $(window).scrollTop($('#' + path[1]).offset().top - 50);
+                }, 500);
+            }
         }
     }
 
